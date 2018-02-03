@@ -1,0 +1,55 @@
+pragma solidity  ^0.4.19;
+
+contract MathFuncs {
+    
+    function MathFuncs () public {
+        
+    }
+    
+    int256 firstNumber = 0;
+    int256 secondNumber = 0;
+    
+    function MathOne(int256 _firstNumber, int256 _secondNumber) public returns (int256, int256, int256, int256) {
+        
+        firstNumber = _firstNumber;
+        secondNumber = _secondNumber;
+        
+        int256 add = firstNumber + secondNumber;
+        
+        if (firstNumber > secondNumber) {
+            int256 subtract = firstNumber - secondNumber;
+        }
+        else if (secondNumber > firstNumber) {
+            subtract = secondNumber - firstNumber;
+        }
+        else if (firstNumber == secondNumber) {
+            subtract = 0;
+        }
+        
+        int256 multiply = firstNumber * secondNumber;
+        
+        int256 divide = firstNumber / secondNumber;
+        
+        return (add, subtract, multiply, divide);
+    }
+    
+    function MathTwo (int256 _firstNumber, int256 _secondNumber) public returns (int256) {
+        
+        firstNumber = _firstNumber;
+        secondNumber = _secondNumber;
+        
+        int256 result = int256(uint(firstNumber) ** uint(secondNumber));
+        
+        return (result);
+    }
+    
+    function MathThree (int256 _firstNumber, int256 _secondNumber) public returns (int256) {
+        
+        firstNumber = _firstNumber;
+        secondNumber = _secondNumber;
+        
+        int256 result = firstNumber % secondNumber;
+        
+        return (result);
+    }
+}
