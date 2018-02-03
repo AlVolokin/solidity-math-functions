@@ -1,0 +1,70 @@
+pragma solidity  ^0.4.19;
+
+contract ModifiedMathFuncs {
+    
+    function ModifiedMathFuncs () public {
+        
+    }
+    
+    int256 firstNumber = 0;
+    
+    function getFirstNumber(int256 _firstNumber) public returns(int256) {
+        firstNumber = _firstNumber;
+        return firstNumber;
+    }
+    
+    function resetFirstNumber() public returns(int256) {
+        firstNumber = 0;
+        return firstNumber;
+    }
+    
+    function Add(int256 _secondNumber) public returns(int256) {
+        
+        firstNumber += _secondNumber;
+        
+        return(firstNumber);
+    }
+    
+    function Subtract(int256 _secondNumber) public returns(int256) {
+        
+        if (firstNumber > _secondNumber) {
+            firstNumber -= _secondNumber;
+        }
+        else if (_secondNumber > firstNumber) {
+            firstNumber = _secondNumber - firstNumber;
+        }
+        else if (firstNumber == _secondNumber) {
+            firstNumber = 0;
+        }
+        
+        return(firstNumber);
+    }
+        
+    function Multiply(int256 _secondNumber) public returns(int256) {
+        
+       firstNumber *= _secondNumber;
+        
+        return(firstNumber);
+    }    
+        
+    function Divide(int256 _secondNumber) public returns(int256) {
+        
+        firstNumber /= _secondNumber;
+        
+        return(firstNumber);
+    }
+    
+    function Power(uint _secondNumber) public returns(int256) {
+        
+        firstNumber = int(uint(firstNumber) ** _secondNumber);
+        
+        return(firstNumber);
+    }
+    
+    function Remainder(int256 _secondNumber) public returns(int256) {
+        
+        firstNumber = firstNumber % _secondNumber;
+        
+        return(firstNumber);
+    }
+}
