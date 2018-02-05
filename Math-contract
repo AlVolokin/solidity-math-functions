@@ -14,11 +14,9 @@ contract MathFuncs {
         
         if (firstNumber > secondNumber) {
             int256 subtract = firstNumber - secondNumber;
-        }
-        else if (secondNumber > firstNumber) {
+        } else if (secondNumber > firstNumber) {
             subtract = secondNumber - firstNumber;
-        }
-        else if (firstNumber == secondNumber) {
+        } else if (firstNumber == secondNumber) {
             subtract = 0;
         }
         
