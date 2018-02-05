@@ -2,14 +2,9 @@ pragma solidity  ^0.4.19;
 
 contract ModifiedMathFuncs {
     
-    function ModifiedMathFuncs () public {
-        
-    }
-    
     int256 firstNumber = 0;
     
-    function getFirstNumber(int256 _firstNumber) public returns(int256) {
-        firstNumber = _firstNumber;
+    function getFirstNumber() public returns(int256) {
         return firstNumber;
     }
     
@@ -18,14 +13,14 @@ contract ModifiedMathFuncs {
         return firstNumber;
     }
     
-    function Add(int256 _secondNumber) public returns(int256) {
+    function add(int256 _secondNumber) public returns(int256) {
         
         firstNumber += _secondNumber;
         
-        return(firstNumber);
+        return firstNumber;
     }
     
-    function Subtract(int256 _secondNumber) public returns(int256) {
+    function subtract(int256 _secondNumber) public returns(int256) {
         
         if (firstNumber > _secondNumber) {
             firstNumber -= _secondNumber;
@@ -37,34 +32,34 @@ contract ModifiedMathFuncs {
             firstNumber = 0;
         }
         
-        return(firstNumber);
+        return firstNumber;
     }
         
-    function Multiply(int256 _secondNumber) public returns(int256) {
+    function multiply(int256 _secondNumber) public returns(int256) {
         
        firstNumber *= _secondNumber;
         
-        return(firstNumber);
+        return firstNumber;
     }    
         
-    function Divide(int256 _secondNumber) public returns(int256) {
+    function divide(int256 _secondNumber) public returns(int256) {
         
         firstNumber /= _secondNumber;
         
-        return(firstNumber);
+        return firstNumber;
     }
     
-    function Power(uint _secondNumber) public returns(int256) {
+    function power(uint _secondNumber) public returns(int256) {
         
         firstNumber = int(uint(firstNumber) ** _secondNumber);
         
-        return(firstNumber);
+        return firstNumber;
     }
     
-    function Remainder(int256 _secondNumber) public returns(int256) {
+    function remainder(int256 _secondNumber) public returns(int256) {
         
         firstNumber = firstNumber % _secondNumber;
         
-        return(firstNumber);
+        return firstNumber;
     }
 }
