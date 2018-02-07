@@ -4,7 +4,7 @@ contract ModifiedMathFuncs {
     
     int256 firstNumber = 0;
     
-    function getFirstNumber() public returns(int256) {
+    function getFirstNumber() public view returns(int256) {
         return firstNumber;
     }
     
@@ -51,7 +51,18 @@ contract ModifiedMathFuncs {
     
     function power(uint _secondNumber) public returns(int256) {
         
+        bool negativeFirstNumber = false;
+        
+        if (firstNumber < 0) {
+            firstNumber *= -1;
+            negativeFirstNumber = true;
+        }
+        
         firstNumber = int(uint(firstNumber) ** _secondNumber);
+        
+        if (negativeFirstNumber && _secondNumber % 2 != 0) {
+            firstNumber *= -1;
+        }
         
         return firstNumber;
     }
