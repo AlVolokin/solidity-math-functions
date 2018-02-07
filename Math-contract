@@ -27,17 +27,29 @@ contract MathFuncs {
         return (add, subtract, multiply, divide);
     }
     
-    function mathTwo (int256 _firstNumber, int256 _secondNumber) public returns (int256) {
+    function mathTwo(int256 _firstNumber, int256 _secondNumber) public returns (int256) {
         
         firstNumber = _firstNumber;
         secondNumber = _secondNumber;
         
+        if (firstNumber < 0) {
+            firstNumber *= -1;
+        }
+        
+        if (secondNumber < 0) {
+            secondNumber *= -1;
+        }
+        
         int256 result = int256(uint(firstNumber) ** uint(secondNumber));
+        
+        if (_firstNumber < 0 && secondNumber % 2 != 0) {
+            result *= -1;
+        }
         
         return result;
     }
     
-    function mathThree (int256 _firstNumber, int256 _secondNumber) public returns (int256) {
+    function mathThree(int256 _firstNumber, int256 _secondNumber) public returns (int256) {
         
         firstNumber = _firstNumber;
         secondNumber = _secondNumber;
