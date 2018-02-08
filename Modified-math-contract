@@ -44,8 +44,10 @@ contract ModifiedMathFuncs {
         
     function divide(int256 _secondNumber) public returns(int256) {
         
-        firstNumber /= _secondNumber;
-        
+        if (_secondNumber != 0) {
+            firstNumber /= _secondNumber;
+        }
+                        
         return firstNumber;
     }
     
@@ -69,7 +71,9 @@ contract ModifiedMathFuncs {
     
     function remainder(int256 _secondNumber) public returns(int256) {
         
-        firstNumber = firstNumber % _secondNumber;
+        if (_secondNumber != 0) {
+            firstNumber = firstNumber % _secondNumber;
+        }
         
         return firstNumber;
     }
