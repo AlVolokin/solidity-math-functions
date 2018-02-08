@@ -22,7 +22,11 @@ contract MathFuncs {
         
         int256 multiply = firstNumber * secondNumber;
         
-        int256 divide = firstNumber / secondNumber;
+        if (secondNumber != 0) {
+            int256 divide = firstNumber / secondNumber;
+        } else {
+            divide = firstNumber;
+        }
         
         return (add, subtract, multiply, divide);
     }
@@ -54,7 +58,11 @@ contract MathFuncs {
         firstNumber = _firstNumber;
         secondNumber = _secondNumber;
         
-        int256 result = firstNumber % secondNumber;
+        if (secondNumber != 0) {
+            int256 result = firstNumber % secondNumber;
+        } else {
+           result = firstNumber;
+        }
         
         return result;
     }
