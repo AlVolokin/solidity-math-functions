@@ -21,16 +21,8 @@ contract ModifiedMathFuncs {
     }
     
     function subtract(int256 _secondNumber) public returns(int256) {
-        
-        if (firstNumber > _secondNumber) {
-            firstNumber -= _secondNumber;
-        }
-        else if (_secondNumber > firstNumber) {
-            firstNumber = _secondNumber - firstNumber;
-        }
-        else if (firstNumber == _secondNumber) {
-            firstNumber = 0;
-        }
+
+        firstNumber -= _secondNumber;
         
         return firstNumber;
     }
@@ -43,11 +35,9 @@ contract ModifiedMathFuncs {
     }    
         
     function divide(int256 _secondNumber) public returns(int256) {
-        
-        if (_secondNumber != 0) {
-            firstNumber /= _secondNumber;
-        }
-                        
+       
+        firstNumber /= _secondNumber;
+                     
         return firstNumber;
     }
     
@@ -70,11 +60,9 @@ contract ModifiedMathFuncs {
     }
     
     function remainder(int256 _secondNumber) public returns(int256) {
-        
-        if (_secondNumber != 0) {
-            firstNumber = firstNumber % _secondNumber;
-        }
-        
+       
+        firstNumber = firstNumber % _secondNumber;
+     
         return firstNumber;
     }
 }
