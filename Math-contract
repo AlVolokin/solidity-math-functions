@@ -11,23 +11,13 @@ contract MathFuncs {
         secondNumber = _secondNumber;
         
         int256 add = firstNumber + secondNumber;
-        
-        if (firstNumber > secondNumber) {
-            int256 subtract = firstNumber - secondNumber;
-        } else if (secondNumber > firstNumber) {
-            subtract = secondNumber - firstNumber;
-        } else if (firstNumber == secondNumber) {
-            subtract = 0;
-        }
-        
+       
+        int256 subtract = firstNumber - secondNumber;
+                
         int256 multiply = firstNumber * secondNumber;
-        
-        if (secondNumber != 0) {
-            int256 divide = firstNumber / secondNumber;
-        } else {
-            divide = firstNumber;
-        }
-        
+       
+        int256 divide = firstNumber / secondNumber;
+               
         return (add, subtract, multiply, divide);
     }
     
